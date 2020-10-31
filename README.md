@@ -3,10 +3,9 @@
 
 
 #### Problem Description
-### --------------------------------------------------------------------------------------------------
 ### Android
 
-![](https://imgur.com/FqkT0UA.jpg)
+![](https://imgur.com/FqkT0UA.jpg | width=100 )
 ![](https://imgur.com/7WgR3or.jpg)
 ![](https://imgur.com/JCfR2I8.jpg)
 ![](https://imgur.com/X51dWco.jpg)
@@ -23,8 +22,6 @@
 ![](https://imgur.com/z9mPrwQ.jpg)
 ![](https://imgur.com/gVFH9lJ.jpg)
 ![](https://imgur.com/70Ih6tr.jpg)
-
-### --------------------------------------------------------------------------------------------------------
 
 ### IOS
 ![](https://imgur.com/ulNAMeR.jpg)
