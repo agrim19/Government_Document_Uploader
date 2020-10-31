@@ -13,6 +13,7 @@ import {
 } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import * as DocumentPicker from "expo-document-picker";
 
 const Stack = createStackNavigator();
 
@@ -215,6 +216,11 @@ function Form({ navigation }) {
             setShow(true);
         }
     };
+    _pickDocument = async () => {
+        let result = await DocumentPicker.getDocumentAsync({});
+        // alert(result.uri);
+        console.log(result.uri);
+    };
     return (
         <ScrollView
             style={{
@@ -335,7 +341,7 @@ function Form({ navigation }) {
                     color="#333456"
                     mode="contained"
                     style={{ marginTop: 10 }}
-                    // onPress={selectLocality}
+                    onPress={this._pickDocument}
                     labelStyle={{ fontSize: 16, color: "white" }}
                 >
                     Upload an existing document
