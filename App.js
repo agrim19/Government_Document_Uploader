@@ -9,7 +9,10 @@ import LicenseForm from "./screens/LicenseForm";
 import { Provider as PaperProvider } from "react-native-paper";
 import Successful from "./screens/Successful";
 import SeeDocuments from "./screens/SeeDocuments";
-import Camera from './screens/Camera';
+import Camera from "./screens/Camera";
+import Login from "./screens/LoginScreen";
+import Register from "./screens/RegisterScreen";
+import Onboarding from "./screens/Onboarding";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +22,9 @@ export default function App() {
             <NavigationContainer>
                 <Stack.Navigator screenOptions={{ headerShown: false }}>
                     <Stack.Screen name="Home" component={Home} />
+                    <Stack.Screen name="Login" component={Login} />
+                    <Stack.Screen name="Register" component={Register} />
+                    <Stack.Screen name="Onboarding" component={Onboarding} />
                     <Stack.Screen name="See" component={SeeDocuments} />
                     <Stack.Screen name="Select" component={ChooseScreen} />
                     <Stack.Screen name="Upload" component={UploadDocuments} />
@@ -28,7 +34,7 @@ export default function App() {
                     />
                     <Stack.Screen name="LicenseForm" component={LicenseForm} />
                     <Stack.Screen name="Successful" component={Successful} />
-                    <Stack.Screen name = "Scan" component = {Camera}/>
+                    <Stack.Screen name="Scan" component={Camera} />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>
