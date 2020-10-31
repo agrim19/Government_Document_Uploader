@@ -5,7 +5,7 @@ import primaryColors from "../primaryColors";
 import BigImage from "./BigImage.js";
 
 export default function ChooseScreen({ navigation }) {
-    const [value, setValue] = React.useState("first");
+    const [value, setValue] = React.useState("PassportForm");
     return (
         <View>
             <Appbar.Header

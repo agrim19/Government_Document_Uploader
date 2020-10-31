@@ -15,36 +15,35 @@ export default function UploadDocuments({ navigation }) {
         handleDocUpload(result);
     };
 
-    handleDocUpload = (result) => {
-        try{ 
-            const apiUrl = 'https://eerie-caverns-14248.herokuapp.com/upload/aadhaar';
+    handleDocUpload = async (result) => {
+        try {
+            const apiUrl =
+                "https://eerie-caverns-14248.herokuapp.com/upload/aadhaar";
             const uri = result.uri;
-            const uriParts = uri.split('.');
+            const uriParts = uri.split(".");
             const fileType = uriParts[uriParts.length - 1];
             const formData = new FormData();
-            formData.append('photo', {
-              uri,
-              name: `photo.${fileType}`,
-              type: `image/${fileType}`,
+            formData.append("photo", {
+                uri,
+                name: `photo.${fileType}`,
+                type: `image/${fileType}`,
             });
             const options = {
-              method: 'POST',
-              body: formData,
-              headers: {
-                Accept: 'application/json',
-                'Content-Type': 'multipart/form-data',
-              },
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "multipart/form-data",
+                },
             };
-            const response=await fetch(apiUrl, options);
-            console.log("response"+JSON.stringify(response));
-            if(!response.ok){
+            const response = await fetch(apiUrl, options);
+            console.log("response" + JSON.stringify(response));
+            if (!response.ok) {
                 alert("Failed to upload ");
             }
-    
-          }
-          catch(error){
+        } catch (error) {
             console.log(error);
-          }
+        }
     };
     return (
         <View style={{ flex: 1 }}>
@@ -188,7 +187,7 @@ export default function UploadDocuments({ navigation }) {
                         icon="check"
                         color={primaryColors.crimsonRedColor}
                         mode="contained"
-                        onPress={() => navigation.navigate('Scan')}
+                        onPress={() => navigation.navigate("Scan")}
                         labelStyle={{ fontSize: 16, color: "white" }}
                         style={{
                             marginBottom: "5%",

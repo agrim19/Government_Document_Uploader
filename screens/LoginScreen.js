@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import { View, ScrollView, Text } from "react-native";
-import {
-    Appbar,
-    HelperText,
-    Button,
-    Menu,
-    Divider,
-    Checkbox,
-    TextInput,
-} from "react-native-paper";
+import { Appbar, Button, TextInput } from "react-native-paper";
 import primaryColors from "../primaryColors";
 
 export default function Login({ navigation }) {
@@ -20,7 +12,7 @@ export default function Login({ navigation }) {
         >
             <Appbar.Header style={{ backgroundColor: primaryColors.blueColor }}>
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="Register" />
+                <Appbar.Content title="Login" />
             </Appbar.Header>
             <View
                 style={{

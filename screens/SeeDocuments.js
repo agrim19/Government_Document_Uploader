@@ -1,14 +1,6 @@
 import React from "react";
-import {
-    View,
-    ScrollView,
-    FlatList,
-    SafeAreaView,
-    StatusBar,
-    Text,
-} from "react-native";
-import BigImage from "./BigImage.js";
-import { Button, Title, Subheading, Appbar, FAB } from "react-native-paper";
+import { View, FlatList, SafeAreaView, StatusBar, Text } from "react-native";
+import { Appbar, FAB } from "react-native-paper";
 import primaryColors from "../primaryColors";
 
 const DATA = [
