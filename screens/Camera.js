@@ -3,7 +3,7 @@ import { Button, Image, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 
-export default function CameraScreen() {
+export default function CameraScreen({navigation}) {
   const [image, setImage] = useState(null);
   const effectFunc=async () => {
     if (Platform.OS !== 'web') {
@@ -54,6 +54,12 @@ export default function CameraScreen() {
         };
         const response=await fetch(apiUrl, options);
         console.log("response"+JSON.stringify(response));
+        if(response.ok){
+          navigation.pop();
+        }
+        else{
+          alert("Failed to upload ");
+        }
 
       }
       catch(error){
