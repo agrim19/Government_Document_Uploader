@@ -14,6 +14,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as DocumentPicker from "expo-document-picker";
+import primaryColors from "./primaryColors";
 
 const Stack = createStackNavigator();
 
@@ -51,7 +52,7 @@ function Home({ navigation }) {
                 style={{
                     fontSize: 14,
                     textAlign: "center",
-                    color: "#9a9a9a",
+                    color: primaryColors.subheadingColor,
                     lineHeight: 20,
                 }}
             >
@@ -61,7 +62,7 @@ function Home({ navigation }) {
             <BigImage image="https://image.freepik.com/free-vector/image-upload-concept-landing-page_23-2148317961.jpg" />
             <Button
                 icon="check"
-                color="#fddb3a"
+                color={primaryColors.yellowColor2}
                 mode="contained"
                 onPress={() => navigation.navigate("Select")}
                 labelStyle={{ fontSize: 16, color: "white" }}
@@ -76,7 +77,9 @@ function ChooseScreen({ navigation }) {
     const [value, setValue] = React.useState("first");
     return (
         <View>
-            <Appbar.Header style={{ backgroundColor: "#333456" }}>
+            <Appbar.Header
+                style={{ backgroundColor: primaryColors.headerColor }}
+            >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
                 <Appbar.Content title="Select Application" />
             </Appbar.Header>
@@ -98,13 +101,16 @@ function ChooseScreen({ navigation }) {
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
                         <View style={{ flex: 1 }}>
-                            <RadioButton value="first" color="#333456" />
+                            <RadioButton
+                                value="first"
+                                color={primaryColors.headerColor}
+                            />
                         </View>
                         <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
-                                    color: "#333456",
+                                    color: primaryColors.headerColor,
                                     fontWeight: "700",
                                 }}
                             >
@@ -116,13 +122,16 @@ function ChooseScreen({ navigation }) {
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
                         <View style={{ flex: 1 }}>
-                            <RadioButton value="second" color="#333456" />
+                            <RadioButton
+                                value="second"
+                                color={primaryColors.headerColor}
+                            />
                         </View>
                         <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
-                                    color: "#333456",
+                                    color: primaryColors.headerColor,
                                     fontWeight: "700",
                                 }}
                             >
@@ -134,13 +143,16 @@ function ChooseScreen({ navigation }) {
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
                         <View style={{ flex: 1 }}>
-                            <RadioButton value="third" color="#333456" />
+                            <RadioButton
+                                value="third"
+                                color={primaryColors.headerColor}
+                            />
                         </View>
                         <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
-                                    color: "#333456",
+                                    color: primaryColors.headerColor,
                                     fontWeight: "700",
                                 }}
                             >
@@ -152,13 +164,16 @@ function ChooseScreen({ navigation }) {
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
                         <View style={{ flex: 1 }}>
-                            <RadioButton value="fourth" color="#333456" />
+                            <RadioButton
+                                value="fourth"
+                                color={primaryColors.headerColor}
+                            />
                         </View>
                         <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
-                                    color: "#333456",
+                                    color: primaryColors.headerColor,
                                     fontWeight: "700",
                                 }}
                             >
@@ -170,13 +185,16 @@ function ChooseScreen({ navigation }) {
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
                         <View style={{ flex: 1 }}>
-                            <RadioButton value="fifth" color="#333456" />
+                            <RadioButton
+                                value="fifth"
+                                color={primaryColors.headerColor}
+                            />
                         </View>
                         <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
-                                    color: "#333456",
+                                    color: primaryColors.headerColor,
                                     fontWeight: "700",
                                 }}
                             >
@@ -227,7 +245,9 @@ function Form({ navigation }) {
                 backgroundColor: "white",
             }}
         >
-            <Appbar.Header style={{ backgroundColor: "#333456" }}>
+            <Appbar.Header
+                style={{ backgroundColor: primaryColors.headerColor }}
+            >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
                 <Appbar.Content title="Aadhar Form" />
             </Appbar.Header>
@@ -244,8 +264,8 @@ function Form({ navigation }) {
                     label="Full Name"
                     theme={{
                         colors: {
-                            primary: "#333456",
-                            placeholder: "#333456",
+                            primary: primaryColors.headerColor,
+                            placeholder: primaryColors.headerColor,
                         },
                     }}
                     style={{
@@ -266,8 +286,8 @@ function Form({ navigation }) {
                     label="Aadhaar Number"
                     theme={{
                         colors: {
-                            primary: "#333456",
-                            placeholder: "#333456",
+                            primary: primaryColors.headerColor,
+                            placeholder: primaryColors.headerColor,
                         },
                     }}
                     style={{
@@ -288,8 +308,8 @@ function Form({ navigation }) {
                     label="Field 2"
                     theme={{
                         colors: {
-                            primary: "#333456",
-                            placeholder: "#333456",
+                            primary: primaryColors.headerColor,
+                            placeholder: primaryColors.headerColor,
                         },
                     }}
                     style={{
@@ -310,8 +330,8 @@ function Form({ navigation }) {
                     label="Field 3"
                     theme={{
                         colors: {
-                            primary: "#333456",
-                            placeholder: "#333456",
+                            primary: primaryColors.headerColor,
+                            placeholder: primaryColors.headerColor,
                         },
                     }}
                     style={{
@@ -329,7 +349,7 @@ function Form({ navigation }) {
                 </HelperText>
                 <Button
                     icon="check"
-                    color="#333456"
+                    color={primaryColors.headerColor}
                     mode="contained"
                     // onPress={selectLocality}
                     labelStyle={{ fontSize: 16, color: "white" }}
@@ -338,7 +358,7 @@ function Form({ navigation }) {
                 </Button>
                 <Button
                     icon="check"
-                    color="#333456"
+                    color={primaryColors.headerColor}
                     mode="contained"
                     style={{ marginTop: 10 }}
                     onPress={this._pickDocument}
@@ -348,7 +368,7 @@ function Form({ navigation }) {
                 </Button>
                 <Button
                     icon="check"
-                    color="#333456"
+                    color={primaryColors.headerColor}
                     mode="contained"
                     style={{ marginVertical: 10 }}
                     // onPress={selectLocality}
