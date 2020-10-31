@@ -126,7 +126,7 @@ function ChooseScreen({ navigation }) {
                                     fontWeight: "700",
                                 }}
                             >
-                                Aadhar
+                                Aadhaar
                             </Text>
                         </View>
                     </View>
@@ -263,7 +263,7 @@ function Form({ navigation }) {
                 </HelperText>
                 <TextInput
                     mode="outlined"
-                    label="Aadhar Number"
+                    label="Aadhaar Number"
                     theme={{
                         colors: {
                             primary: "#333456",
