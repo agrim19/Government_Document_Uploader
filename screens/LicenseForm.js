@@ -31,8 +31,13 @@ export default function LicenseForm({ navigation }) {
     const openMenu2 = () => setVisible2(true);
     const closeMenu2 = () => setVisible2(false);
 
+    const [visible3, setVisible3] = React.useState(false);
+    const openMenu3 = () => setVisible3(true);
+    const closeMenu3 = () => setVisible3(false);
+
     const [checked, setChecked] = useState(false);
     const [checked2, setChecked2] = useState(false);
+    const [checked3, setChecked3] = useState(false);
 
     const [residenceText, setResidenceText] = useState(
         "Select Residence Proof"
@@ -231,10 +236,10 @@ export default function LicenseForm({ navigation }) {
                 >
                     <View style={{ flex: 1 }}>
                         <Checkbox
-                            status={checked2 ? "checked" : "unchecked"}
+                            status={checked3 ? "checked" : "unchecked"}
                             color={primaryColors.orangeColor}
                             onPress={() => {
-                                setChecked2(!checked2);
+                                setChecked3(!checked3);
                             }}
                         />
                     </View>
