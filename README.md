@@ -4,6 +4,8 @@
 
 #### Problem Description
 
+### Android
+
 ![](https://imgur.com/FqkT0UA.jpg)
 ![](https://imgur.com/7WgR3or.jpg)
 ![](https://imgur.com/JCfR2I8.jpg)
@@ -21,3 +23,11 @@
 ![](https://imgur.com/z9mPrwQ.jpg)
 ![](https://imgur.com/gVFH9lJ.jpg)
 ![](https://imgur.com/70Ih6tr.jpg)
+
+### IOS
+![](https://imgur.com/ulNAMeR.jpg)
+![](https://imgur.com/aPxD8sb.jpg)
+![](https://imgur.com/rFB8hgX.jpg)
+![](https://imgur.com/2QjEotp.jpg)
+![](https://imgur.com/15VKLyP.jpg)
+![](https://imgur.com/WbQAAfm.jpg)
