@@ -97,7 +97,10 @@ function ChooseScreen({ navigation }) {
                     <View
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
-                        <View style={{ flex: 4 }}>
+                        <View style={{ flex: 1 }}>
+                            <RadioButton value="first" color="#333456" />
+                        </View>
+                        <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -108,32 +111,14 @@ function ChooseScreen({ navigation }) {
                                 Passport
                             </Text>
                         </View>
-                        <View style={{ flex: 1 }}>
-                            <RadioButton value="first" color="#333456" />
-                        </View>
                     </View>
                     <View
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
-                        <View style={{ flex: 4 }}>
-                            <Text
-                                style={{
-                                    fontSize: 18,
-                                    color: "#333456",
-                                    fontWeight: "700",
-                                }}
-                            >
-                                Adhar
-                            </Text>
-                        </View>
                         <View style={{ flex: 1 }}>
                             <RadioButton value="second" color="#333456" />
                         </View>
-                    </View>
-                    <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                    >
-                        <View style={{ flex: 4 }}>
+                        <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -141,17 +126,17 @@ function ChooseScreen({ navigation }) {
                                     fontWeight: "700",
                                 }}
                             >
-                                Pan Card
+                                Aadhar
                             </Text>
                         </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
                         <View style={{ flex: 1 }}>
                             <RadioButton value="third" color="#333456" />
                         </View>
-                    </View>
-                    <View
-                        style={{ flexDirection: "row", alignItems: "center" }}
-                    >
-                        <View style={{ flex: 4 }}>
+                        <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -159,17 +144,35 @@ function ChooseScreen({ navigation }) {
                                     fontWeight: "700",
                                 }}
                             >
-                                Driving License
+                                PAN Card
                             </Text>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <RadioButton value="fourth" color="#333456" />
                         </View>
                     </View>
                     <View
                         style={{ flexDirection: "row", alignItems: "center" }}
                     >
-                        <View style={{ flex: 4 }}>
+                        <View style={{ flex: 1 }}>
+                            <RadioButton value="fourth" color="#333456" />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: "#333456",
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Driver's License
+                            </Text>
+                        </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton value="fifth" color="#333456" />
+                        </View>
+                        <View style={{ flex: 7 }}>
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -179,9 +182,6 @@ function ChooseScreen({ navigation }) {
                             >
                                 Voter ID Card
                             </Text>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <RadioButton value="fifth" color="#333456" />
                         </View>
                     </View>
                 </RadioButton.Group>
@@ -229,7 +229,7 @@ function Form({ navigation }) {
         >
             <Appbar.Header style={{ backgroundColor: "#333456" }}>
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="Adhaar Form" />
+                <Appbar.Content title="Aadhar Form" />
             </Appbar.Header>
             <View
                 style={{
@@ -263,7 +263,7 @@ function Form({ navigation }) {
                 </HelperText>
                 <TextInput
                     mode="outlined"
-                    label="Adhaar Number"
+                    label="Aadhar Number"
                     theme={{
                         colors: {
                             primary: "#333456",
