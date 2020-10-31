@@ -24,13 +24,17 @@ export default function LicenseForm({ navigation }) {
             setShow(true);
         }
     };
+
     const [visible, setVisible] = React.useState(false);
-
     const openMenu = () => setVisible(true);
-
     const closeMenu = () => setVisible(false);
 
-    const [checked, setChecked] = React.useState(false);
+    const [visible2, setVisible2] = React.useState(false);
+    const openMenu2 = () => setVisible2(true);
+    const closeMenu2 = () => setVisible2(false);
+
+    const [checked, setChecked] = useState(false);
+    const [checked2, setChecked2] = useState(false);
     return (
         <ScrollView
             style={{
@@ -85,10 +89,11 @@ export default function LicenseForm({ navigation }) {
                         </Button>
                     }
                 >
-                    <Menu.Item onPress={() => {}} title="Item 1" />
-                    <Menu.Item onPress={() => {}} title="Item 2" />
+                    <Menu.Item onPress={() => {}} title="Ration Card" />
                     <Divider />
-                    <Menu.Item onPress={() => {}} title="Item 3" />
+                    <Menu.Item onPress={() => {}} title="Voter's ID" />
+                    <Divider />
+                    <Menu.Item onPress={() => {}} title="Passport" />
                 </Menu>
                 <HelperText
                     type="error"
@@ -99,8 +104,8 @@ export default function LicenseForm({ navigation }) {
                     upload using upload documents.
                 </HelperText>
                 <Menu
-                    visible={visible}
-                    onDismiss={closeMenu}
+                    visible={visible2}
+                    onDismiss={closeMenu2}
                     anchor={
                         <Button
                             style={{
@@ -111,7 +116,7 @@ export default function LicenseForm({ navigation }) {
                             }}
                             mode="outlined"
                             color={primaryColors.orangeColor}
-                            onPress={openMenu}
+                            onPress={openMenu2}
                             icon="chevron-down"
                             labelStyle={{
                                 fontSize: 30,
@@ -127,10 +132,17 @@ export default function LicenseForm({ navigation }) {
                         </Button>
                     }
                 >
-                    <Menu.Item onPress={() => {}} title="Item 1" />
-                    <Menu.Item onPress={() => {}} title="Item 2" />
+                    <Menu.Item
+                        onPress={() => {}}
+                        title="Educational Certificate"
+                    />
                     <Divider />
-                    <Menu.Item onPress={() => {}} title="Item 3" />
+                    <Menu.Item onPress={() => {}} title="Birth Certificate" />
+                    <Divider />
+                    <Menu.Item
+                        onPress={() => {}}
+                        title="10th class Marksheet"
+                    />
                 </Menu>
                 <HelperText
                     type="error"
@@ -171,10 +183,10 @@ export default function LicenseForm({ navigation }) {
                 >
                     <View style={{ flex: 1 }}>
                         <Checkbox
-                            status={checked ? "checked" : "unchecked"}
+                            status={checked2 ? "checked" : "unchecked"}
                             color={primaryColors.orangeColor}
                             onPress={() => {
-                                setChecked(!checked);
+                                setChecked2(!checked2);
                             }}
                         />
                     </View>
@@ -186,7 +198,7 @@ export default function LicenseForm({ navigation }) {
                     icon="check"
                     color={primaryColors.orangeColor}
                     mode="contained"
-                    // onPress={selectLocality}
+                    onPress={() => navigation.navigate("Successful")}
                     labelStyle={{ fontSize: 16, color: "white" }}
                 >
                     Confirm

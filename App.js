@@ -7,6 +7,7 @@ import UploadDocuments from "./screens/UploadDocuments";
 import PassportForm from "./screens/PassportForm";
 import LicenseForm from "./screens/LicenseForm";
 import { Provider as PaperProvider } from "react-native-paper";
+import Successful from "./screens/Successful";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App() {
                         component={PassportForm}
                     />
                     <Stack.Screen name="LicenseForm" component={LicenseForm} />
+                    <Stack.Screen name="Successful" component={Successful} />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>
