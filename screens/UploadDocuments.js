@@ -2,8 +2,8 @@ import React from "react";
 import { View, ScrollView } from "react-native";
 import { RadioButton, Text, Appbar, Button } from "react-native-paper";
 import * as DocumentPicker from "expo-document-picker";
-import primaryColors from "./primaryColors";
-import BigImage from "./screens/BigImage.js";
+import primaryColors from "../primaryColors";
+import BigImage from "./BigImage.js";
 
 export default function UploadDocuments({ navigation }) {
     const [value, setValue] = React.useState("first");
@@ -22,9 +22,9 @@ export default function UploadDocuments({ navigation }) {
             <ScrollView
                 style={{
                     backgroundColor: "white",
-                    height: "100%",
+                    minHeight: "100%",
                     paddingHorizontal: 30,
-                    marginBottom: "5%",
+                    // marginBottom: "105%",
                     paddingTop: 20,
                 }}
             >

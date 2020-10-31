@@ -1,12 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./screens/Home.js";
-import ChooseScreen from "./screens/ChooseScreen.js";
-import UploadDocuments from "./screens/UploadDocuments.js";
-import PassportForm from "./screens/PassportForm.js";
-import ChooseScreen from "./screens/SelectApplication.js";
-import LicenseForm from "./screens/LicenseForm.js";
+import Home from "./screens/Home";
+import ChooseScreen from "./screens/SelectApplication";
+import UploadDocuments from "./screens/UploadDocuments";
+import PassportForm from "./screens/PassportForm";
+import LicenseForm from "./screens/LicenseForm";
 
 const Stack = createStackNavigator();
 

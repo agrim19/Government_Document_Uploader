@@ -1,8 +1,8 @@
 import React from "react";
 import { View, ScrollView } from "react-native";
 import { RadioButton, Text, Appbar, Button } from "react-native-paper";
-import primaryColors from "./primaryColors";
-import BigImage from "./screens/BigImage.js";
+import primaryColors from "../primaryColors";
+import BigImage from "./BigImage.js";
 
 export default function ChooseScreen({ navigation }) {
     const [value, setValue] = React.useState("first");

@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import { Title, Subheading, Button } from "react-native-paper";
-import primaryColors from "./primaryColors";
-import BigImage from "./screens/BigImage.js";
+import primaryColors from "../primaryColors";
+import BigImage from "./BigImage.js";
 
 export default function Home({ navigation }) {
     return (
