@@ -165,7 +165,7 @@ function Form({navigation}){
     		>
            <Appbar.Header style={{backgroundColor:"#333456"}}>
           <Appbar.BackAction onPress={()=>navigation.pop()}  />      
-          <Appbar.Content title="Adhaar Form"/>
+          <Appbar.Content title="Aadhar Form"/>
         </Appbar.Header>
     			<View
     				style={{
