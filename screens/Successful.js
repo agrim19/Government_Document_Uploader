@@ -36,7 +36,7 @@ export default function Successful({ navigation }) {
                     icon="check"
                     color={primaryColors.greenColor}
                     mode="contained"
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.navigate("Onboarding")}
                     labelStyle={{ fontSize: 16, color: "white" }}
                     style={{
                         marginBottom: "5%",
