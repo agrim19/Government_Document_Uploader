@@ -66,7 +66,6 @@ function Home({navigation}) {
 
 function ChooseScreen({navigation}){
   const [value, setValue] = React.useState('first');
-  const _goBack = () => console.log('Went back');
   return(
     <View>
     <Appbar.Header style={{backgroundColor:"#333456"}}>
@@ -84,43 +83,43 @@ function ChooseScreen({navigation}){
       <BigImage image="https://image.freepik.com/free-vector/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy_335657-356.jpg" />
       <RadioButton.Group onValueChange={value => setValue(value)} value={value} >
       <View style={{flexDirection:"row",alignItems:'center'}}>
-        <View style={{flex:4}}>
-        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Passport</Text>
-        </View>
         <View style={{flex:1}}>
         <RadioButton value="first" color="#333456" />
         </View>
-      </View>
-      <View style={{flexDirection:"row",alignItems:'center'}}>
-      <View style={{flex:4}}>
-        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Adhar</Text>
+        <View style={{flex:7}}>
+        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Passport</Text>
         </View>
+	  </View>	
+      <View style={{flexDirection:"row",alignItems:'center'}}>
         <View style={{flex:1}}>
         <RadioButton value="second" color="#333456" />
         </View>
-      </View>
+        <View style={{flex:7}}>
+        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Aadhar</Text>
+        </View>
+	  </View>
       <View style={{flexDirection:"row",alignItems:'center'}}>
-      <View style={{flex:4}}>
-        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Pan Card</Text>
-        </View>
         <View style={{flex:1}}>
-        <RadioButton value="third" color="#333456"/>
+        <RadioButton value="third" color="#333456" />
         </View>
-      </View>
+        <View style={{flex:7}}>
+        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>PAN Card</Text>
+        </View>
+	  </View>
       <View style={{flexDirection:"row",alignItems:'center'}}>
-      <View style={{flex:4}}>
-        <Text style={{fontSize:18,color:"#333456",fontWeight:"700" }}>Driving License</Text>
-        </View>
         <View style={{flex:1}}>
-        <RadioButton value="fourth" color="#333456"/>
+        <RadioButton value="fourth" color="#333456" />
         </View>
-      </View>
+        <View style={{flex:7}}>
+        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Driver's License</Text>
+        </View>
+	  </View>
       <View style={{flexDirection:"row",alignItems:'center'}}>
-      <View style={{flex:4}}>
-        <Text style={{fontSize:18,color:"#333456",fontWeight:"700" }}>Voter ID Card</Text>
-        </View>
         <View style={{flex:1}}>
-        <RadioButton value="fifth" color="#333456"/>
+        <RadioButton value="fifth" color="#333456" />
+        </View>
+        <View style={{flex:7}}>
+        <Text style={{fontSize:18,color:"#333456",fontWeight:"700"  }}>Voter ID Card</Text>
         </View>
       </View>
     </RadioButton.Group>
