@@ -1,70 +1,74 @@
-import { StatusBar } from 'expo-status-bar';
-import React ,{useState} from 'react';
-import { View, Image,ScrollView } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { View, Image, ScrollView } from "react-native";
 import {
-  Title,
-  Subheading,
-  RadioButton,
-  Text,
-  Appbar,
-  TextInput,
-  HelperText,
-  Button
+    Title,
+    Subheading,
+    RadioButton,
+    Text,
+    Appbar,
+    TextInput,
+    HelperText,
+    Button,
 } from "react-native-paper";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
 
-export default function App(){
-  return(
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions = {{headerShown:false}}
-      >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name = "Select" component = {ChooseScreen}/>
-        <Stack.Screen name ="Form" component={Form}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Select" component={ChooseScreen} />
+                <Stack.Screen name="Form" component={Form} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
 
-function Home({navigation}) {
-  return (
-    <View style={{
-      	backgroundColor: "white",
-		height: "100%",
-	  	paddingHorizontal: 30,
-		paddingTop: 90,
-	}}>
-      <Title style={{
-          fontSize: 25,
-          textAlign: "center",
-      }}>Welcome to Government Document Scanner and Uploader!</Title>
-      <Subheading
-					style={{
-						fontSize: 14,
-						textAlign: "center",
-						color: "#9a9a9a",
-						lineHeight: 20,
-					}}
-				>
-					For all your application needs and blah blah blah blah blah blah catchy line
-				</Subheading>
-        <BigImage image="https://image.freepik.com/free-vector/image-upload-concept-landing-page_23-2148317961.jpg" />
-        <Button
-					icon="check"
-					color="#fddb3a"
-					mode="contained"
-					onPress={()=>navigation.navigate("Select")}
-					labelStyle={{ fontSize: 16, color: "white" }}
-				>
-					GET STARTED
-				</Button>
-    </View>
-  );
+function Home({ navigation }) {
+    return (
+        <View
+            style={{
+                backgroundColor: "white",
+                height: "100%",
+                paddingHorizontal: 30,
+                paddingTop: 90,
+            }}
+        >
+            <Title
+                style={{
+                    fontSize: 25,
+                    textAlign: "center",
+                }}
+            >
+                Welcome to Government Document Scanner and Uploader!
+            </Title>
+            <Subheading
+                style={{
+                    fontSize: 14,
+                    textAlign: "center",
+                    color: "#9a9a9a",
+                    lineHeight: 20,
+                }}
+            >
+                For all your application needs and blah blah blah blah blah blah
+                catchy line
+            </Subheading>
+            <BigImage image="https://image.freepik.com/free-vector/image-upload-concept-landing-page_23-2148317961.jpg" />
+            <Button
+                icon="check"
+                color="#fddb3a"
+                mode="contained"
+                onPress={() => navigation.navigate("Select")}
+                labelStyle={{ fontSize: 16, color: "white" }}
+            >
+                GET STARTED
+            </Button>
+        </View>
+    );
 }
 
 function ChooseScreen({navigation}){
@@ -145,19 +149,19 @@ function ChooseScreen({navigation}){
   )
 }
 
-function Form({navigation}){
+function Form({ navigation }) {
     const [text, setText] = useState("");
-	const onChangeText = (text) => {
-		setText(text);
-		setShow(false);
-	};
-	const [show, setShow] = useState(false);
-	const hasErrors = () => {
-		if (text.length == 0) {
-			setShow(true);
-		}
-  };
-  return(
+    const onChangeText = (text) => {
+        setText(text);
+        setShow(false);
+    };
+    const [show, setShow] = useState(false);
+    const hasErrors = () => {
+        if (text.length == 0) {
+            setShow(true);
+        }
+    };
+    return (
         <ScrollView
     			style={{
     				backgroundColor: "white",
@@ -298,20 +302,20 @@ function Form({navigation}){
 }
 
 function BigImage({ size = 350, image }) {
-	return (
-		<View>
-			<Image
-				width={size}
-				height={size}
-				style={{
-					width: size,
-					height: size,
-					borderRadius: 7,
-					alignSelf: "center",
-          marginVertical: 20,
-				}}
-				source={{ uri: image }}
-			/>
-		</View>
-	);
+    return (
+        <View>
+            <Image
+                width={size}
+                height={size}
+                style={{
+                    width: size,
+                    height: size,
+                    borderRadius: 7,
+                    alignSelf: "center",
+                    marginVertical: 20,
+                }}
+                source={{ uri: image }}
+            />
+        </View>
+    );
 }
