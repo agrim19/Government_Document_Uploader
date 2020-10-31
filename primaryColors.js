@@ -10,4 +10,5 @@ export default {
     redColor: "#214252",
     crimsonRedColor: "#214252",
     greenColor: "#d2e603",
+    pinkColor: "#ffa5a5",
 };

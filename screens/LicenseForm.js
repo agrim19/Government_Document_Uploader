@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { View, ScrollView, Text } from "react-native";
 import {
     Appbar,
-    TextInput,
     HelperText,
     Button,
     Menu,
     Divider,
-    Subheading,
     Checkbox,
 } from "react-native-paper";
 import primaryColors from "../primaryColors";
@@ -33,8 +31,18 @@ export default function LicenseForm({ navigation }) {
     const openMenu2 = () => setVisible2(true);
     const closeMenu2 = () => setVisible2(false);
 
+    const [visible3, setVisible3] = React.useState(false);
+    const openMenu3 = () => setVisible3(true);
+    const closeMenu3 = () => setVisible3(false);
+
     const [checked, setChecked] = useState(false);
     const [checked2, setChecked2] = useState(false);
+    const [checked3, setChecked3] = useState(false);
+
+    const [residenceText, setResidenceText] = useState(
+        "Select Residence Proof"
+    );
+    const [ageText, setAgeText] = useState("Select Age Proof");
     return (
         <ScrollView
             style={{
@@ -45,7 +53,7 @@ export default function LicenseForm({ navigation }) {
                 style={{ backgroundColor: primaryColors.headerColor }}
             >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="Application Form" />
+                <Appbar.Content title="License Form" />
             </Appbar.Header>
             <View
                 style={{
@@ -79,16 +87,34 @@ export default function LicenseForm({ navigation }) {
                                     fontSize: 16,
                                 }}
                             >
-                                Select Residence Proof
+                                {residenceText}
                             </Text>
                         </Button>
                     }
                 >
-                    <Menu.Item onPress={() => {}} title="Ration Card" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Ration Card");
+                            closeMenu();
+                        }}
+                        title="Ration Card"
+                    />
                     <Divider />
-                    <Menu.Item onPress={() => {}} title="Voter's ID" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Voter's ID");
+                            closeMenu();
+                        }}
+                        title="Voter's ID"
+                    />
                     <Divider />
-                    <Menu.Item onPress={() => {}} title="Passport" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Passport");
+                            closeMenu();
+                        }}
+                        title="Passport"
+                    />
                 </Menu>
                 <HelperText
                     type="error"
@@ -122,20 +148,32 @@ export default function LicenseForm({ navigation }) {
                                     fontSize: 16,
                                 }}
                             >
-                                Select Age Proof
+                                {ageText}
                             </Text>
                         </Button>
                     }
                 >
                     <Menu.Item
-                        onPress={() => {}}
+                        onPress={() => {
+                            setAgeText("Educational Certificate");
+                            closeMenu2();
+                        }}
                         title="Educational Certificate"
                     />
                     <Divider />
-                    <Menu.Item onPress={() => {}} title="Birth Certificate" />
+                    <Menu.Item
+                        onPress={() => {
+                            setAgeText("Birth Certificate");
+                            closeMenu2();
+                        }}
+                        title="Birth Certificate"
+                    />
                     <Divider />
                     <Menu.Item
-                        onPress={() => {}}
+                        onPress={() => {
+                            setAgeText("10th Class Marksheet");
+                            closeMenu2();
+                        }}
                         title="10th class Marksheet"
                     />
                 </Menu>
@@ -173,7 +211,7 @@ export default function LicenseForm({ navigation }) {
                     style={{
                         flexDirection: "row",
                         alignItems: "center",
-                        marginBottom: 25,
+                        marginBottom: 10,
                     }}
                 >
                     <View style={{ flex: 1 }}>
@@ -187,6 +225,29 @@ export default function LicenseForm({ navigation }) {
                     </View>
                     <View style={{ flex: 7 }}>
                         <Text>I have uploaded my PAN Card.</Text>
+                    </View>
+                </View>
+                <View
+                    style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginBottom: 35,
+                    }}
+                >
+                    <View style={{ flex: 1 }}>
+                        <Checkbox
+                            status={checked3 ? "checked" : "unchecked"}
+                            color={primaryColors.orangeColor}
+                            onPress={() => {
+                                setChecked3(!checked3);
+                            }}
+                        />
+                    </View>
+                    <View style={{ flex: 7 }}>
+                        <Text>
+                            I herby declare that all the documents uploaded by
+                            me are correct.
+                        </Text>
                     </View>
                 </View>
                 <Button
