@@ -4,22 +4,27 @@ import { RadioButton, Text, Appbar, Button } from "react-native-paper";
 import * as DocumentPicker from "expo-document-picker";
 import primaryColors from "../primaryColors";
 import BigImage from "./BigImage.js";
+import RNFetchBlob from "rn-fetch-blob";
 
 export default function UploadDocuments({ navigation }) {
     const [value, setValue] = React.useState("first");
+    const [doc, setDoc] = React.useState(undefined);
     _pickDocument = async () => {
         let result = await DocumentPicker.getDocumentAsync({});
-        console.log(result.uri);
+        setDoc(result);
+        console.log(result);
+    };
+
+    handleDocUpload = (data) => {
+        console.log(data);
     };
     return (
-        <View
-            style={{ flex:1}}
-        >
+        <View style={{ flex: 1 }}>
             <Appbar.Header
                 style={{ backgroundColor: primaryColors.headerColor }}
             >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="Chopse a document to upload" />
+                <Appbar.Content title="Choose a document to upload" />
             </Appbar.Header>
             <ScrollView
                 style={{
@@ -145,7 +150,7 @@ export default function UploadDocuments({ navigation }) {
                         icon="check"
                         color="#fddb3a"
                         mode="contained"
-                        onPress={() => navigation.navigate("LicenseForm")}
+                        onPress={this._pickDocument}
                         labelStyle={{ fontSize: 16, color: "white" }}
                         style={{
                             marginBottom: "5%",

@@ -16,11 +16,7 @@ export default function PassportForm({ navigation }) {
             setShow(true);
         }
     };
-    _pickDocument = async () => {
-        let result = await DocumentPicker.getDocumentAsync({});
-        // alert(result.uri);
-        console.log(result.uri);
-    };
+
     return (
         <ScrollView
             style={{
