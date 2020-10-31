@@ -145,7 +145,7 @@ export default function LicenseForm({ navigation }) {
                     color={primaryColors.orangeColor}
                     mode="contained"
                     style={{ marginVertical: 10 }}
-                    // onPress={selectLocality}
+                    onPress={navigation.navigate("CameraScreen")}
                     labelStyle={{ fontSize: 16, color: "white" }}
                 >
                     Scan a new document

@@ -6,6 +6,7 @@ import ChooseScreen from "./screens/SelectApplication";
 import UploadDocuments from "./screens/UploadDocuments";
 import PassportForm from "./screens/PassportForm";
 import LicenseForm from "./screens/LicenseForm";
+import CameraScreen from "./screens/Camera";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
                 <Stack.Screen name="Upload" component={UploadDocuments} />
                 <Stack.Screen name="PassportForm" component={PassportForm} />
                 <Stack.Screen name="LicenseForm" component={LicenseForm} />
+                <Stack.Screen name="CameraScreen" component={CameraScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
