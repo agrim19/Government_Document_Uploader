@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { View, ScrollView, Text } from "react-native";
 import {
     Appbar,
-    TextInput,
     HelperText,
     Button,
     Menu,
     Divider,
-    Subheading,
     Checkbox,
 } from "react-native-paper";
 import primaryColors from "../primaryColors";
@@ -36,8 +34,10 @@ export default function LicenseForm({ navigation }) {
     const [checked, setChecked] = useState(false);
     const [checked2, setChecked2] = useState(false);
 
-    const [residenceText, setResidenceText] = useState('Select Residence Proof');
-    const [ageText, setAgeText] = useState('Select Age Proof');
+    const [residenceText, setResidenceText] = useState(
+        "Select Residence Proof"
+    );
+    const [ageText, setAgeText] = useState("Select Age Proof");
     return (
         <ScrollView
             style={{
@@ -48,7 +48,7 @@ export default function LicenseForm({ navigation }) {
                 style={{ backgroundColor: primaryColors.headerColor }}
             >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="Application Form" />
+                <Appbar.Content title="License Form" />
             </Appbar.Header>
             <View
                 style={{
@@ -87,11 +87,29 @@ export default function LicenseForm({ navigation }) {
                         </Button>
                     }
                 >
-                    <Menu.Item onPress={() => {setResidenceText("Ration Card"); closeMenu()}} title="Ration Card" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Ration Card");
+                            closeMenu();
+                        }}
+                        title="Ration Card"
+                    />
                     <Divider />
-                    <Menu.Item onPress={() => {setResidenceText("Voter's ID"); closeMenu();}} title="Voter's ID" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Voter's ID");
+                            closeMenu();
+                        }}
+                        title="Voter's ID"
+                    />
                     <Divider />
-                    <Menu.Item onPress={() => {setResidenceText("Passport"); closeMenu();}} title="Passport" />
+                    <Menu.Item
+                        onPress={() => {
+                            setResidenceText("Passport");
+                            closeMenu();
+                        }}
+                        title="Passport"
+                    />
                 </Menu>
                 <HelperText
                     type="error"
@@ -131,14 +149,26 @@ export default function LicenseForm({ navigation }) {
                     }
                 >
                     <Menu.Item
-                        onPress={() => {setAgeText("Educational Certificate"); closeMenu2();}}
+                        onPress={() => {
+                            setAgeText("Educational Certificate");
+                            closeMenu2();
+                        }}
                         title="Educational Certificate"
                     />
                     <Divider />
-                    <Menu.Item onPress={() => {setAgeText('Birth Certificate'); closeMenu2();}} title="Birth Certificate" />
+                    <Menu.Item
+                        onPress={() => {
+                            setAgeText("Birth Certificate");
+                            closeMenu2();
+                        }}
+                        title="Birth Certificate"
+                    />
                     <Divider />
                     <Menu.Item
-                        onPress={() => {setAgeText('10th Class Marksheet'); closeMenu2();}}
+                        onPress={() => {
+                            setAgeText("10th Class Marksheet");
+                            closeMenu2();
+                        }}
                         title="10th class Marksheet"
                     />
                 </Menu>
@@ -176,7 +206,7 @@ export default function LicenseForm({ navigation }) {
                     style={{
                         flexDirection: "row",
                         alignItems: "center",
-                        marginBottom: 25,
+                        marginBottom: 10,
                     }}
                 >
                     <View style={{ flex: 1 }}>
@@ -190,6 +220,29 @@ export default function LicenseForm({ navigation }) {
                     </View>
                     <View style={{ flex: 7 }}>
                         <Text>I have uploaded my PAN Card.</Text>
+                    </View>
+                </View>
+                <View
+                    style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginBottom: 35,
+                    }}
+                >
+                    <View style={{ flex: 1 }}>
+                        <Checkbox
+                            status={checked2 ? "checked" : "unchecked"}
+                            color={primaryColors.orangeColor}
+                            onPress={() => {
+                                setChecked2(!checked2);
+                            }}
+                        />
+                    </View>
+                    <View style={{ flex: 7 }}>
+                        <Text>
+                            I herby declare that all the documents uploaded by
+                            me are correct.
+                        </Text>
                     </View>
                 </View>
                 <Button
