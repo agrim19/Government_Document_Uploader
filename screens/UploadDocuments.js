@@ -12,7 +12,9 @@ export default function UploadDocuments({ navigation }) {
         console.log(result.uri);
     };
     return (
-        <View>
+        <View
+            style={{ flex:1}}
+        >
             <Appbar.Header
                 style={{ backgroundColor: primaryColors.headerColor }}
             >
@@ -22,9 +24,8 @@ export default function UploadDocuments({ navigation }) {
             <ScrollView
                 style={{
                     backgroundColor: "white",
-                    minHeight: "100%",
+                    height: "100%",
                     paddingHorizontal: 30,
-                    // marginBottom: "105%",
                     paddingTop: 20,
                 }}
             >
