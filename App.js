@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { View, Image, ScrollView } from "react-native";
 import {
@@ -24,6 +23,7 @@ export default function App() {
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Select" component={ChooseScreen} />
+                <Stack.Screen name="Upload" component={UploadDocuments} />
                 <Stack.Screen name="Form" component={Form} />
                 <Stack.Screen name="LicenseForm" component={LicenseForm} />
             </Stack.Navigator>
@@ -65,11 +65,187 @@ function Home({ navigation }) {
                 icon="check"
                 color={primaryColors.yellowColor2}
                 mode="contained"
+                style={{ marginTop: 10, marginBottom: 20 }}
+                onPress={() => navigation.navigate("Upload")}
+                labelStyle={{ fontSize: 16, color: "white" }}
+            >
+                Upload documents
+            </Button>
+            <Button
+                icon="check"
+                color={primaryColors.yellowColor2}
+                mode="contained"
                 onPress={() => navigation.navigate("Select")}
                 labelStyle={{ fontSize: 16, color: "white" }}
             >
-                GET STARTED
+                Fill Application
             </Button>
+        </View>
+    );
+}
+
+function UploadDocuments({ navigation }) {
+    const [value, setValue] = React.useState("first");
+    _pickDocument = async () => {
+        let result = await DocumentPicker.getDocumentAsync({});
+        // alert(result.uri);
+        console.log(result.uri);
+    };
+    return (
+        <View>
+            <Appbar.Header
+                style={{ backgroundColor: primaryColors.headerColor }}
+            >
+                <Appbar.BackAction onPress={() => navigation.pop()} />
+                <Appbar.Content title="Chopse a document to upload" />
+            </Appbar.Header>
+            <ScrollView
+                style={{
+                    backgroundColor: "white",
+                    height: "100%",
+                    paddingHorizontal: 30,
+                    marginBottom: "5%",
+                    paddingTop: 20,
+                }}
+            >
+                <BigImage image="https://image.freepik.com/free-vector/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy_335657-356.jpg" />
+                <RadioButton.Group
+                    onValueChange={(value) => setValue(value)}
+                    value={value}
+                >
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton
+                                value="first"
+                                color={primaryColors.headerColor}
+                            />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: primaryColors.headerColor,
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Passport
+                            </Text>
+                        </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton
+                                value="second"
+                                color={primaryColors.headerColor}
+                            />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: primaryColors.headerColor,
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Aadhaar
+                            </Text>
+                        </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton
+                                value="third"
+                                color={primaryColors.headerColor}
+                            />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: primaryColors.headerColor,
+                                    fontWeight: "700",
+                                }}
+                            >
+                                PAN Card
+                            </Text>
+                        </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton
+                                value="fourth"
+                                color={primaryColors.headerColor}
+                            />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: primaryColors.headerColor,
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Driver's License
+                            </Text>
+                        </View>
+                    </View>
+                    <View
+                        style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                        <View style={{ flex: 1 }}>
+                            <RadioButton
+                                value="fifth"
+                                color={primaryColors.headerColor}
+                            />
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    color: primaryColors.headerColor,
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Voter ID Card
+                            </Text>
+                        </View>
+                    </View>
+                </RadioButton.Group>
+                <View style={{ paddingTop: 30 }}>
+                    <Button
+                        icon="check"
+                        color="#fddb3a"
+                        mode="contained"
+                        onPress={() => navigation.navigate("LicenseForm")}
+                        labelStyle={{ fontSize: 16, color: "white" }}
+                        style={{
+                            marginBottom: "5%",
+                        }}
+                    >
+                        Upload an existing document
+                    </Button>
+                    <Button
+                        icon="check"
+                        color="#fddb3a"
+                        mode="contained"
+                        onPress={() => navigation.navigate("LicenseForm")}
+                        labelStyle={{ fontSize: 16, color: "white" }}
+                        style={{
+                            marginBottom: "5%",
+                        }}
+                    >
+                        Scan a new document
+                    </Button>
+                </View>
+            </ScrollView>
         </View>
     );
 }
@@ -514,7 +690,7 @@ function LicenseForm({ navigation }) {
                     color={primaryColors.orangeColor}
                     mode="contained"
                     style={{ marginTop: 10 }}
-                    onPress={_pickDocument}
+                    onPress={this._pickDocument}
                     labelStyle={{ fontSize: 16, color: "white" }}
                 >
                     Upload an existing document
