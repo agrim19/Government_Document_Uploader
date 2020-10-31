@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import { View, ScrollView } from "react-native";
-import { Appbar, TextInput, HelperText, Button } from "react-native-paper";
-import * as DocumentPicker from "expo-document-picker";
+import { View, ScrollView, Text } from "react-native";
+import {
+    Appbar,
+    TextInput,
+    HelperText,
+    Button,
+    Menu,
+    Divider,
+    Subheading,
+    Checkbox,
+} from "react-native-paper";
 import primaryColors from "../primaryColors";
 
 export default function LicenseForm({ navigation }) {
@@ -16,11 +24,13 @@ export default function LicenseForm({ navigation }) {
             setShow(true);
         }
     };
-    _pickDocument = async () => {
-        let result = await DocumentPicker.getDocumentAsync({});
-        // alert(result.uri);
-        console.log(result.uri);
-    };
+    const [visible, setVisible] = React.useState(false);
+
+    const openMenu = () => setVisible(true);
+
+    const closeMenu = () => setVisible(false);
+
+    const [checked, setChecked] = React.useState(false);
     return (
         <ScrollView
             style={{
@@ -41,115 +51,137 @@ export default function LicenseForm({ navigation }) {
                     paddingTop: 60,
                 }}
             >
-                <TextInput
-                    mode="outlined"
-                    label="Full Name"
-                    theme={{
-                        colors: {
-                            primary: primaryColors.orangeColor,
-                            placeholder: primaryColors.orangeColor,
-                        },
-                    }}
-                    style={{
-                        marginBottom: 10,
-                    }}
-                    onChangeText={onChangeText}
-                    autoCapitalize="words"
-                />
+                {/* <Subheading>
+                    Please ensure you have uploaded the required documents in
+                    the upload documents section. 1. Address Proof 2.Age Proof
+                    3.Learner's Driving License 4. Pan Card
+                </Subheading> */}
+                <Menu
+                    visible={visible}
+                    onDismiss={closeMenu}
+                    anchor={
+                        <Button
+                            style={{
+                                width: "100%",
+                                paddingTop: 8,
+                                marginTop: 5,
+                                height: 55,
+                            }}
+                            mode="outlined"
+                            color={primaryColors.orangeColor}
+                            onPress={openMenu}
+                            icon="chevron-down"
+                            labelStyle={{
+                                fontSize: 30,
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                }}
+                            >
+                                Select Residence Proof
+                            </Text>
+                        </Button>
+                    }
+                >
+                    <Menu.Item onPress={() => {}} title="Item 1" />
+                    <Menu.Item onPress={() => {}} title="Item 2" />
+                    <Divider />
+                    <Menu.Item onPress={() => {}} title="Item 3" />
+                </Menu>
                 <HelperText
                     type="error"
                     visible={show}
                     style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
                 >
-                    Please fill this field
+                    You have not uploaded this document. Please go back to
+                    upload using upload documents.
                 </HelperText>
-                <TextInput
-                    mode="outlined"
-                    label="Aadhaar Number"
-                    theme={{
-                        colors: {
-                            primary: primaryColors.orangeColor,
-                            placeholder: primaryColors.orangeColor,
-                        },
-                    }}
-                    style={{
-                        marginBottom: 10,
-                    }}
-                    onChangeText={onChangeText}
-                    autoCapitalize="words"
-                />
+                <Menu
+                    visible={visible}
+                    onDismiss={closeMenu}
+                    anchor={
+                        <Button
+                            style={{
+                                width: "100%",
+                                paddingTop: 8,
+                                marginTop: 5,
+                                height: 55,
+                            }}
+                            mode="outlined"
+                            color={primaryColors.orangeColor}
+                            onPress={openMenu}
+                            icon="chevron-down"
+                            labelStyle={{
+                                fontSize: 30,
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                }}
+                            >
+                                Select Age Proof
+                            </Text>
+                        </Button>
+                    }
+                >
+                    <Menu.Item onPress={() => {}} title="Item 1" />
+                    <Menu.Item onPress={() => {}} title="Item 2" />
+                    <Divider />
+                    <Menu.Item onPress={() => {}} title="Item 3" />
+                </Menu>
                 <HelperText
                     type="error"
                     visible={show}
                     style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
                 >
-                    Please fill this field
+                    You have not uploaded this document. Please go back to
+                    upload using upload documents.
                 </HelperText>
-                <TextInput
-                    mode="outlined"
-                    label="Field 2"
-                    theme={{
-                        colors: {
-                            primary: primaryColors.orangeColor,
-                            placeholder: primaryColors.orangeColor,
-                        },
-                    }}
+                <View
                     style={{
-                        marginBottom: 10,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginBottom: 7,
                     }}
-                    onChangeText={onChangeText}
-                    autoCapitalize="words"
-                />
-                <HelperText
-                    type="error"
-                    visible={show}
-                    style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
                 >
-                    Please fill this field
-                </HelperText>
-                <TextInput
-                    mode="outlined"
-                    label="Field 3"
-                    theme={{
-                        colors: {
-                            primary: primaryColors.orangeColor,
-                            placeholder: primaryColors.orangeColor,
-                        },
-                    }}
+                    <View style={{ flex: 1 }}>
+                        <Checkbox
+                            status={checked ? "checked" : "unchecked"}
+                            color={primaryColors.orangeColor}
+                            onPress={() => {
+                                setChecked(!checked);
+                            }}
+                        />
+                    </View>
+                    <View style={{ flex: 7 }}>
+                        <Text>
+                            I have uploaded my learner's driving license.
+                        </Text>
+                    </View>
+                </View>
+                <View
                     style={{
-                        marginBottom: 10,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginBottom: 25,
                     }}
-                    onChangeText={onChangeText}
-                    autoCapitalize="words"
-                />
-                <HelperText
-                    type="error"
-                    visible={show}
-                    style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
                 >
-                    Please fill this field
-                </HelperText>
-
-                <Button
-                    icon="check"
-                    color={primaryColors.orangeColor}
-                    mode="contained"
-                    style={{ marginTop: 10 }}
-                    onPress={this._pickDocument}
-                    labelStyle={{ fontSize: 16, color: "white" }}
-                >
-                    Upload an existing document
-                </Button>
-                <Button
-                    icon="check"
-                    color={primaryColors.orangeColor}
-                    mode="contained"
-                    style={{ marginVertical: 10 }}
-                    // onPress={selectLocality}
-                    labelStyle={{ fontSize: 16, color: "white" }}
-                >
-                    Scan a new document
-                </Button>
+                    <View style={{ flex: 1 }}>
+                        <Checkbox
+                            status={checked ? "checked" : "unchecked"}
+                            color={primaryColors.orangeColor}
+                            onPress={() => {
+                                setChecked(!checked);
+                            }}
+                        />
+                    </View>
+                    <View style={{ flex: 7 }}>
+                        <Text>I have uploaded my PAN Card.</Text>
+                    </View>
+                </View>
                 <Button
                     icon="check"
                     color={primaryColors.orangeColor}

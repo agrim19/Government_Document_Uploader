@@ -4,7 +4,6 @@ import { RadioButton, Text, Appbar, Button } from "react-native-paper";
 import * as DocumentPicker from "expo-document-picker";
 import primaryColors from "../primaryColors";
 import BigImage from "./BigImage.js";
-import RNFetchBlob from "rn-fetch-blob";
 
 export default function UploadDocuments({ navigation }) {
     const [value, setValue] = React.useState("first");
