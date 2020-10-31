@@ -33,7 +33,7 @@ export default function ChooseScreen({ navigation }) {
                     >
                         <View style={{ flex: 1 }}>
                             <RadioButton
-                                value="first"
+                                value="PassportForm"
                                 color={primaryColors.headerColor}
                             />
                         </View>
@@ -55,7 +55,7 @@ export default function ChooseScreen({ navigation }) {
                     >
                         <View style={{ flex: 1 }}>
                             <RadioButton
-                                value="fourth"
+                                value="LicenseForm"
                                 color={primaryColors.headerColor}
                             />
                         </View>
@@ -77,7 +77,7 @@ export default function ChooseScreen({ navigation }) {
                         icon="check"
                         color={primaryColors.orangeColor}
                         mode="contained"
-                        onPress={() => navigation.navigate("LicenseForm")}
+                        onPress={() => navigation.navigate(value)}
                         labelStyle={{ fontSize: 16, color: "white" }}
                         style={{
                             marginBottom: "5%",
