@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, ScrollView } from "react-native";
 import { Appbar, TextInput, HelperText, Button } from "react-native-paper";
-import * as DocumentPicker from "expo-document-picker";
 import primaryColors from "../primaryColors";
 
 export default function PassportForm({ navigation }) {

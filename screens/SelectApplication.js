@@ -75,7 +75,7 @@ export default function ChooseScreen({ navigation }) {
                 <View style={{ paddingTop: 30 }}>
                     <Button
                         icon="check"
-                        color="#fddb3a"
+                        color={primaryColors.orangeColor}
                         mode="contained"
                         onPress={() => navigation.navigate("LicenseForm")}
                         labelStyle={{ fontSize: 16, color: "white" }}

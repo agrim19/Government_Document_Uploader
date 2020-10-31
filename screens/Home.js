@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
         >
             <Title
                 style={{
-                    fontSize: 25,
+                    fontSize: 21,
                     textAlign: "center",
                 }}
             >
@@ -30,8 +30,7 @@ export default function Home({ navigation }) {
                     lineHeight: 20,
                 }}
             >
-                For all your application needs and blah blah blah blah blah blah
-                catchy line
+                Uploading Documents and Applying is now super easy!
             </Subheading>
             <BigImage image="https://image.freepik.com/free-vector/image-upload-concept-landing-page_23-2148317961.jpg" />
             <Button

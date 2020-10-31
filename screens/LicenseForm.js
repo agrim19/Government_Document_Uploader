@@ -42,10 +42,10 @@ export default function LicenseForm({ navigation }) {
             }}
         >
             <Appbar.Header
-                style={{ backgroundColor: primaryColors.orangeColor }}
+                style={{ backgroundColor: primaryColors.headerColor }}
             >
                 <Appbar.BackAction onPress={() => navigation.pop()} />
-                <Appbar.Content title="License Form" />
+                <Appbar.Content title="Application Form" />
             </Appbar.Header>
             <View
                 style={{
@@ -55,11 +55,6 @@ export default function LicenseForm({ navigation }) {
                     paddingTop: 60,
                 }}
             >
-                {/* <Subheading>
-                    Please ensure you have uploaded the required documents in
-                    the upload documents section. 1. Address Proof 2.Age Proof
-                    3.Learner's Driving License 4. Pan Card
-                </Subheading> */}
                 <Menu
                     visible={visible}
                     onDismiss={closeMenu}

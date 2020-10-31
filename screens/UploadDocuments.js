@@ -19,9 +19,7 @@ export default function UploadDocuments({ navigation }) {
     };
     return (
         <View style={{ flex: 1 }}>
-            <Appbar.Header
-                style={{ backgroundColor: primaryColors.headerColor }}
-            >
+            <Appbar.Header style={{ backgroundColor: primaryColors.redColor }}>
                 <Appbar.BackAction onPress={() => navigation.pop()} />
                 <Appbar.Content title="Choose a document to upload" />
             </Appbar.Header>
@@ -33,7 +31,7 @@ export default function UploadDocuments({ navigation }) {
                     paddingTop: 20,
                 }}
             >
-                <BigImage image="https://image.freepik.com/free-vector/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy_335657-356.jpg" />
+                <BigImage image="https://image.freepik.com/free-vector/upload-concept-illustration_114360-1205.jpg" />
                 <RadioButton.Group
                     onValueChange={(value) => setValue(value)}
                     value={value}
@@ -147,7 +145,7 @@ export default function UploadDocuments({ navigation }) {
                 <View style={{ paddingTop: 30 }}>
                     <Button
                         icon="check"
-                        color="#fddb3a"
+                        color={primaryColors.crimsonRedColor}
                         mode="contained"
                         onPress={this._pickDocument}
                         labelStyle={{ fontSize: 16, color: "white" }}
@@ -159,9 +157,9 @@ export default function UploadDocuments({ navigation }) {
                     </Button>
                     <Button
                         icon="check"
-                        color="#fddb3a"
+                        color={primaryColors.crimsonRedColor}
                         mode="contained"
-                        onPress={() => navigation.navigate("LicenseForm")}
+                        onPress={() => console.log("button pressed")}
                         labelStyle={{ fontSize: 16, color: "white" }}
                         style={{
                             marginBottom: "5%",
