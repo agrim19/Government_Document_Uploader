@@ -159,7 +159,7 @@ export default function UploadDocuments({ navigation }) {
                         icon="check"
                         color={primaryColors.crimsonRedColor}
                         mode="contained"
-                        onPress={() => console.log("button pressed")}
+                        onPress={() => navigation.navigate('Scan')}
                         labelStyle={{ fontSize: 16, color: "white" }}
                         style={{
                             marginBottom: "5%",

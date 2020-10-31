@@ -9,6 +9,7 @@ import LicenseForm from "./screens/LicenseForm";
 import { Provider as PaperProvider } from "react-native-paper";
 import Successful from "./screens/Successful";
 import SeeDocuments from "./screens/SeeDocuments";
+import Camera from './screens/Camera';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
                     />
                     <Stack.Screen name="LicenseForm" component={LicenseForm} />
                     <Stack.Screen name="Successful" component={Successful} />
+                    <Stack.Screen name = "Scan" component = {Camera}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>

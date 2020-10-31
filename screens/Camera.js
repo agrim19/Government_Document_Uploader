@@ -32,9 +32,34 @@ export default function CameraScreen() {
       base64: true,
     });
 
-    console.log(result);
     if (!result.cancelled) {
-      setImage('data:image/jpeg;base64,'+result.base64);
+      try{ 
+        const apiUrl = 'https://eerie-caverns-14248.herokuapp.com/upload/aadhaar';
+        const uri = result.uri;
+        const uriParts = uri.split('.');
+        const fileType = uriParts[uriParts.length - 1];
+        const formData = new FormData();
+        formData.append('photo', {
+          uri,
+          name: `photo.${fileType}`,
+          type: `image/${fileType}`,
+        });
+        const options = {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'multipart/form-data',
+          },
+        };
+        const response=await fetch(apiUrl, options);
+        console.log("response"+JSON.stringify(response));
+
+      }
+      catch(error){
+        console.log(error);
+      }
+      setImage('data:image/jpeg;base64,'+result.base64);  
     }
     
   };
