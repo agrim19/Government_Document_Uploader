@@ -8,13 +8,13 @@ import {
     Text,
 } from "react-native";
 import BigImage from "./BigImage.js";
-import { Button, Title, Subheading, Appbar } from "react-native-paper";
+import { Button, Title, Subheading, Appbar, FAB } from "react-native-paper";
 import primaryColors from "../primaryColors";
 
 const DATA = [
     {
         id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-        title: "Aadhar Card",
+        title: "Aadhaar Card",
     },
     {
         id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
@@ -61,18 +61,32 @@ export default function SeeDocuments({ navigation }) {
                     paddingTop: 20,
                 }}
             >
-                <SafeAreaView
-                    style={{
-                        flex: 1,
-                        marginTop: StatusBar.currentHeight || 0,
-                    }}
-                >
-                    <FlatList
-                        data={DATA}
-                        renderItem={renderItem}
-                        keyExtractor={(item) => item.id}
+                <View>
+                    <SafeAreaView
+                        style={{
+                            flex: 1,
+                            marginTop: StatusBar.currentHeight || 0,
+                            marginBottom: 100,
+                        }}
+                    >
+                        <FlatList
+                            data={DATA}
+                            renderItem={renderItem}
+                            keyExtractor={(item) => item.id}
+                        />
+                    </SafeAreaView>
+                    <FAB
+                        style={{
+                            position: "absolute",
+                            margin: 16,
+                            right: 20,
+                            bottom: 0,
+                            // marginTop: 50,
+                        }}
+                        icon="plus"
+                        onPress={() => navigation.navigate("Upload")}
                     />
-                </SafeAreaView>
+                </View>
             </ScrollView>
         </View>
     );
