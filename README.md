@@ -5,7 +5,7 @@
 #### Problem Description
 ### Android
 
-![](https://imgur.com/FqkT0UA.jpg | width=100 )
+<img src="https://imgur.com/FqkT0UA.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 ![](https://imgur.com/7WgR3or.jpg)
 ![](https://imgur.com/JCfR2I8.jpg)
 ![](https://imgur.com/X51dWco.jpg)
