@@ -12,10 +12,39 @@ export default function UploadDocuments({ navigation }) {
         let result = await DocumentPicker.getDocumentAsync({});
         setDoc(result);
         console.log(result);
+        handleDocUpload(result);
     };
 
-    handleDocUpload = (data) => {
-        console.log(data);
+    handleDocUpload = (result) => {
+        try{ 
+            const apiUrl = 'https://eerie-caverns-14248.herokuapp.com/upload/aadhaar';
+            const uri = result.uri;
+            const uriParts = uri.split('.');
+            const fileType = uriParts[uriParts.length - 1];
+            const formData = new FormData();
+            formData.append('photo', {
+              uri,
+              name: `photo.${fileType}`,
+              type: `image/${fileType}`,
+            });
+            const options = {
+              method: 'POST',
+              body: formData,
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'multipart/form-data',
+              },
+            };
+            const response=await fetch(apiUrl, options);
+            console.log("response"+JSON.stringify(response));
+            if(!response.ok){
+                alert("Failed to upload ");
+            }
+    
+          }
+          catch(error){
+            console.log(error);
+          }
     };
     return (
         <View style={{ flex: 1 }}>

@@ -53,7 +53,7 @@ export default function SeeDocuments({ navigation }) {
                 <Appbar.BackAction onPress={() => navigation.pop()} />
                 <Appbar.Content title="List of Uploaded Documents" />
             </Appbar.Header>
-            <ScrollView
+            <SafeAreaView
                 style={{
                     backgroundColor: "white",
                     height: "100%",
@@ -64,7 +64,6 @@ export default function SeeDocuments({ navigation }) {
                 <View>
                     <SafeAreaView
                         style={{
-                            flex: 1,
                             marginTop: StatusBar.currentHeight || 0,
                             marginBottom: 100,
                         }}
@@ -81,13 +80,12 @@ export default function SeeDocuments({ navigation }) {
                             margin: 16,
                             right: 20,
                             bottom: 0,
-                            // marginTop: 50,
                         }}
                         icon="plus"
                         onPress={() => navigation.navigate("Upload")}
                     />
                 </View>
-            </ScrollView>
+            </SafeAreaView>
         </View>
     );
 }
