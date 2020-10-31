@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { ScrollView, View, Image } from 'react-native';
+import React ,{useState} from 'react';
+import { View, Image,ScrollView } from 'react-native';
 import {
   Title,
   Subheading,
   RadioButton,
   Text,
   Appbar,
+  TextInput,
+  HelperText,
   Button
 } from "react-native-paper";
 import { NavigationContainer } from '@react-navigation/native';
@@ -23,6 +25,7 @@ export default function App(){
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name = "Select" component = {ChooseScreen}/>
+        <Stack.Screen name ="Form" component={Form}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
@@ -128,7 +131,7 @@ function ChooseScreen({navigation}){
 		icon="check"
 		color="#fddb3a"
 		mode="contained"
-		onPress={()=>console.log("done")}
+		onPress={()=>navigation.navigate("Form")}
 		labelStyle={{ fontSize: 16, color: "white" }}
 		style={{
 			marginBottom:'5%',
@@ -140,6 +143,158 @@ function ChooseScreen({navigation}){
     </ScrollView>
     </View>
   )
+}
+
+function Form({navigation}){
+    const [text, setText] = useState("");
+	const onChangeText = (text) => {
+		setText(text);
+		setShow(false);
+	};
+	const [show, setShow] = useState(false);
+	const hasErrors = () => {
+		if (text.length == 0) {
+			setShow(true);
+		}
+  };
+  return(
+        <ScrollView
+    			style={{
+    				backgroundColor: "white",
+    			}}
+    		>
+           <Appbar.Header style={{backgroundColor:"#333456"}}>
+          <Appbar.BackAction onPress={()=>navigation.pop()}  />      
+          <Appbar.Content title="Adhaar Form"/>
+        </Appbar.Header>
+    			<View
+    				style={{
+    					backgroundColor: "white",
+    					height: "100%",
+    					paddingHorizontal: 30,
+    					paddingTop: 60,
+    				}}
+    			>
+    				<TextInput
+    					mode="outlined"
+    					label="Full Name"
+    					theme={{
+    						colors: {
+    							primary: "#333456",
+    							placeholder: "#333456"
+    						},
+    					}}
+    					style={{
+    						marginBottom: 10,
+    					}}
+    					onChangeText={onChangeText}
+    					autoCapitalize="words"
+    				/>
+    				<HelperText
+    					type="error"
+    					visible={show}
+    					style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
+    				>
+    					Please fill this field
+    				</HelperText>
+            <TextInput
+    					mode="outlined"
+    					label="Adhaar Number"
+    					theme={{
+    						colors: {
+    							primary: "#333456",
+    							placeholder: "#333456"
+    						},
+    					}}
+    					style={{
+    						marginBottom: 10,
+    					}}
+    					onChangeText={onChangeText}
+    					autoCapitalize="words"
+    				/>
+    				<HelperText
+    					type="error"
+    					visible={show}
+    					style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
+    				>
+    					Please fill this field
+    				</HelperText>
+            <TextInput
+    					mode="outlined"
+    					label="Field 2"
+    					theme={{
+    						colors: {
+    							primary: "#333456",
+    							placeholder: "#333456"
+    						},
+    					}}
+    					style={{
+    						marginBottom: 10,
+    					}}
+    					onChangeText={onChangeText}
+    					autoCapitalize="words"
+    				/>
+    				<HelperText
+    					type="error"
+    					visible={show}
+    					style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
+    				>
+    					Please fill this field
+    				</HelperText>
+            <TextInput
+    					mode="outlined"
+    					label="Field 3"
+    					theme={{
+    						colors: {
+    							primary: "#333456",
+    							placeholder: "#333456"
+    						},
+    					}}
+    					style={{
+    						marginBottom: 10,
+    					}}
+    					onChangeText={onChangeText}
+    					autoCapitalize="words"
+    				/>
+    				<HelperText
+    					type="error"
+    					visible={show}
+    					style={{ marginBottom: 9, marginTop: -6, marginLeft: -8 }}
+    				>
+    					Please fill this field 
+    				</HelperText>
+    				<Button
+    					icon="check"
+    					color="#333456"
+    					mode="contained"
+    					// onPress={selectLocality}
+    					labelStyle={{ fontSize: 16, color: "white" }}
+    				>
+    					Confirm
+    				</Button>
+            <Button
+    					icon="check"
+    					color="#333456"
+              mode="contained"
+              style={{marginTop:10,}}
+    					// onPress={selectLocality}
+    					labelStyle={{ fontSize: 16, color: "white" }}
+    				>
+    					Upload an existing document
+    				</Button>
+            <Button
+    					icon="check"
+    					color="#333456"
+              mode="contained"
+              style={{marginVertical:10,}}
+    					// onPress={selectLocality}
+    					labelStyle={{ fontSize: 16, color: "white" }}
+    				>
+    					Scan a new document
+    				</Button>
+    			</View>
+    		</ScrollView>
+      )
 }
 
 function BigImage({ size = 350, image }) {
