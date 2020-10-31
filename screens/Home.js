@@ -37,7 +37,16 @@ export default function Home({ navigation }) {
                 icon="check"
                 color={primaryColors.yellowColor2}
                 mode="contained"
-                style={{ marginTop: 10, marginBottom: 20 }}
+                onPress={() => navigation.navigate("See")}
+                labelStyle={{ fontSize: 16, color: "white" }}
+            >
+                See Uploaded Documents
+            </Button>
+            <Button
+                icon="check"
+                color={primaryColors.yellowColor2}
+                mode="contained"
+                style={{ marginTop: 15, marginBottom: 15 }}
                 onPress={() => navigation.navigate("Upload")}
                 labelStyle={{ fontSize: 16, color: "white" }}
             >
