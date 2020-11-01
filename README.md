@@ -1,7 +1,7 @@
 # Facilitation of Document Upload for Online Applications
 ## Gov-TechThon 2020 Project
 * This application provides the options for uploading and verifying official government documents and keep them saved. These documents can then be used at any point of time for online government applications, which can also be done through the app.
-* This helps to have a one-place solution for all kinds of applications whose support has been added at that point of time. When scaled, support for more and more such applications can be added and hence the application procedure to any of them can become extremely easy for the user, and the handling can become easy for the department
+* This helps to have a one-place solution for all kinds of applications whose support has been added at that point of time. When scaled, support for more and more such applications can be added and hence the application procedure to any of them can become extremely easy for the user, and the handling can become easy for the department.
 
 ## Features implemented
 * Login/Register into the app
