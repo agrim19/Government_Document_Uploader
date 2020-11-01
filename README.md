@@ -1,21 +1,21 @@
 # Facilitation of Document Upload for Online Applications
-### Gov-TechThon 2020 Project
+## Gov-TechThon 2020 Project
 * This application provides the options for uploading and verifying official government documents and keep them saved. These documents can then be used at any point of time for online government applications, which can also be done through the app.
 
-### Features implemented
+## Features implemented
 * Login/Register into the app
 * Upload documents through upload or scanning using the camera.
 * See list of earlier saved documents.
 * Use saved documents from earlier to fill various government applications like Passport, Driver's License, e.t.c.
 
-### Instructions to open and run the app
+## Instructions to open and run the app
 * Download expo on your Android/iOS device.
 * Go to link https://expo.io/@aastha985/projects/gov_doc_uploader and open the app in Expo.
 * App gets opened in the device
 
-### Screenshots from the App
+## Screenshots from the App
 
-## Android
+### Android
 <img src="https://imgur.com/FqkT0UA.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/7WgR3or.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/JCfR2I8.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
@@ -34,7 +34,7 @@
 <img src="https://imgur.com/gVFH9lJ.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/70Ih6tr.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 
-## IOS
+### IOS
 <img src="https://imgur.com/ulNAMeR.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/aPxD8sb.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/rFB8hgX.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
