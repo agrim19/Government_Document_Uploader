@@ -13,8 +13,9 @@
 * Go to link https://expo.io/@aastha985/projects/gov_doc_uploader and open the app in Expo.
 * App gets opened in the device
 
-### Android
+### Screenshots from the App
 
+## Android
 <img src="https://imgur.com/FqkT0UA.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/7WgR3or.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/JCfR2I8.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
@@ -33,7 +34,7 @@
 <img src="https://imgur.com/gVFH9lJ.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/70Ih6tr.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 
-### IOS
+## IOS
 <img src="https://imgur.com/ulNAMeR.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/aPxD8sb.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
 <img src="https://imgur.com/rFB8hgX.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="500"/>
